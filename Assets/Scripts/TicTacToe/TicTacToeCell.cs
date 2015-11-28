@@ -7,6 +7,9 @@ public class TicTacToeCell : MonoBehaviour {
 	public GameObject happyCat;
 	public GameObject happyDog;
 
+	public Animator catAnimator;
+	public Animator dogAnimator;
+
 	public bool isCellFree { get; set; }
 	public PlayerType playerOwned { get; set; }
 	public int coordX { get; set; }
@@ -22,7 +25,18 @@ public class TicTacToeCell : MonoBehaviour {
 		isFingerInsideCell = false;
 	}
 
+	public void StartHappyStandingAnimation(){
+		if (playerOwned == PlayerType.Cat) {
+			catAnimator.SetBool("IsCat", true);
+			catAnimator.SetInteger("State", 1);
+		} else {
+			dogAnimator.SetBool("IsCat", false);
+			dogAnimator.SetInteger("State", 1);
+		}
+	}
+
 	void ActivateCurrent(){
+		StartCoroutine (Camera.current.GetComponent<ShakeTransform> ().LaunchSelf ());
 		isCellFree = false;
 		playerOwned = TicTacToeManager.GetInstance().currentPlayerTurn;
 
@@ -35,6 +49,7 @@ public class TicTacToeCell : MonoBehaviour {
 		}
 		TicTacToeManager.GetInstance ().CheckWinningCondition ();
 		TicTacToeManager.GetInstance ().AlternateTurn ();
+		HappyStandingTriggerer.instance.RegisterCellToAnimation(this);
 	}
 
 	public void WinningCellEffect(){

@@ -6,3 +6,5 @@ Assembly-*
 *.sln
 *.userprefs
 /*.apk
+/WebPlayer
+/WebPlayer.zip

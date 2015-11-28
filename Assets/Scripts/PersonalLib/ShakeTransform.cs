@@ -24,6 +24,10 @@ public class ShakeTransform : MonoBehaviour {
 	{
 //		StartCoroutine(LaunchShake(transform));
 	}
+	public IEnumerator LaunchSelf()
+	{
+		return LaunchShake(transform);
+	}
 	public IEnumerator LaunchShake(Transform target_transform)
 	{
 		ShakeCounter counter = new ShakeCounter();
