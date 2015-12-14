@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class MainMenuButtons : MonoBehaviour {
+	public GameObject settingsMenuScreen;
+
 	public void Launch1PlayerMode()
 	{
 		Application.LoadLevel("TicTacToeMain");
@@ -14,6 +16,11 @@ public class MainMenuButtons : MonoBehaviour {
 
 	public void LaunchSettings()
 	{
+		settingsMenuScreen.SetActive (true);
+	}
+	public void BackFromSettings()
+	{
+		settingsMenuScreen.SetActive (false);
 	}
 
 	public void LaunchExit()
