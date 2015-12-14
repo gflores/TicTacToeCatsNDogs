@@ -18,7 +18,6 @@ public class HappyStandingTriggerer : MonoBehaviour {
 		cellsToAnimate.Add(cell);
 	}
 	public void LaunchHappyStanding(){
-		Debug.LogWarning ("okay !!");
 		foreach (var cell in cellsToAnimate){
 			cell.StartHappyStandingAnimation ();
 		}

@@ -13,6 +13,9 @@ public class TicTacToeManager : MonoBehaviour {
 
 	int dimensionX = 3;
 	int dimensionY = 3;
+
+	public Camera mainCamera;
+
 	public bool isGameFinished { get; set;}
 	public PlayerType winner{ get; set;}
 //	public GameObject normalCatModel;
@@ -23,6 +26,7 @@ public class TicTacToeManager : MonoBehaviour {
 	public TicTacToeCell[] cells;
 	int turnCount;
 	public PlayerType currentPlayerTurn { get; set;}
+	bool _isBoardLocked = false;
 
 	void Awake(){
 		_instance = this;
@@ -45,6 +49,16 @@ public class TicTacToeManager : MonoBehaviour {
 		SetPlayerTurn(PlayerType.Cat);
 	}
 
+	public void LockBoard(){
+		_isBoardLocked = true;
+	}
+	public void UnlockBoard(){
+		_isBoardLocked = false;
+	}
+	public bool isBoardLocked(){
+		return _isBoardLocked;
+	}
+
 	void Update(){
 
 	}
@@ -57,18 +71,21 @@ public class TicTacToeManager : MonoBehaviour {
 			ShowWinner(PlayerType.Dog);
 		} else if (turnCount == dimensionX * dimensionY)
 			TicTacToeMainGUI.instance.LaunchDrawScreen();
-
-		EmptyPotentialWinnerCells();
+		else
+			EmptyPotentialWinnerCells();
 	}
 	void ShowWinner(PlayerType player)
 	{
 		isGameFinished = true;
 		winner = player;
+		CurrentPlayerTurnImg.GetInstance ().gameObject.SetActive (false);
+		TicTacToeMainGUI.instance.LaunchWinnerScreen();
+	}
+
+	public void LaunchVictoryDance(){
 		foreach (var cell in _potentialWinnerCells) {
 			cell.WinningCellEffect();
 		}
-		CurrentPlayerTurnImg.GetInstance ().gameObject.SetActive (false);
-		TicTacToeMainGUI.instance.LaunchWinnerScreen();
 	}
 	bool CheckIfWon(PlayerType player){
 		for (int i = 0; i < dimensionX; ++i) {

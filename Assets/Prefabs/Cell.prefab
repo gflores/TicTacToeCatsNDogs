@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 485358}
   - 95: {fileID: 9521444}
   - 111: {fileID: 11169502}
+  - 114: {fileID: 11454282}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -27,6 +28,7 @@ GameObject:
   - 4: {fileID: 478812}
   - 95: {fileID: 9550996}
   - 111: {fileID: 11138046}
+  - 114: {fileID: 11486516}
   m_Layer: 0
   m_Name: Animation
   m_TagString: Untagged
@@ -43,6 +45,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 485230}
   - 212: {fileID: 21234188}
+  - 95: {fileID: 9546492}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -105,6 +108,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 436758}
   - 212: {fileID: 21248024}
+  - 95: {fileID: 9528598}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -123,6 +127,7 @@ GameObject:
   - 212: {fileID: 21207680}
   - 61: {fileID: 6118330}
   - 114: {fileID: 11477574}
+  - 114: {fileID: 11428810}
   m_Layer: 0
   m_Name: Cell
   m_TagString: Untagged
@@ -292,6 +297,40 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9528598
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5397342e5fec4344b35b3881b85ce93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &9546492
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124154}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5397342e5fec4344b35b3881b85ce93, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!95 &9550996
 Animator:
   serializedVersion: 3
@@ -337,6 +376,90 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &11428810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f01e62c7f7140645879f55c22ba19fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos_x_curve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 10
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  random_pos_x: 1
+  pos_y_curve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 10
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  random_pos_y: 1
+  scale_x_curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  random_scale_x: 0
+  scale_y_curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  random_scale_y: 0
+  angle_curve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  random_angle: 0
+  value_ratio: .300000012
+  time_ratio: 4
+  cameras_zoom_curve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 10
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!114 &11454282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd508785a3c57047bdf79a575584256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11477574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -352,6 +475,21 @@ MonoBehaviour:
   normalDog: {fileID: 124154}
   happyCat: {fileID: 197532}
   happyDog: {fileID: 135686}
+  catAnimator: {fileID: 9550996}
+  dogAnimator: {fileID: 9521444}
+  catSpriteAnimator: {fileID: 9528598}
+  dogSpriteAnimator: {fileID: 9546492}
+--- !u!114 &11486516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd508785a3c57047bdf79a575584256, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21207680
 SpriteRenderer:
   m_ObjectHideFlags: 1
