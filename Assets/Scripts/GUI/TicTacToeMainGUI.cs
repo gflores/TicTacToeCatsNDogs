@@ -12,6 +12,9 @@ public class TicTacToeMainGUI : MonoBehaviour {
 	public GameObject DrawScreen;
 	public GameObject settingsMenu;
 
+	public GameObject playerNotification;
+	public GameObject opponentNotification;
+
 	void Awake(){
 		instance = this;
 	}
@@ -30,6 +33,7 @@ public class TicTacToeMainGUI : MonoBehaviour {
 	}
 
 	public void LaunchDrawScreen(){
+//		TicTacToeManager.GetInstance ().isGameFinished = true;
 		DrawScreen.SetActive(true);
 		mainGameplayScreen.SetActive(false);
 		Destroy (CurrentPlayerTurnImg.GetInstance ().gameObject);

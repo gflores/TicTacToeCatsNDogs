@@ -66,11 +66,13 @@ public class TicTacToeManager : MonoBehaviour {
 	public void CheckWinningCondition(){
 		++turnCount;
 		if (CheckIfWon (PlayerType.Cat) == true) {
-			ShowWinner(PlayerType.Cat);
+			ShowWinner (PlayerType.Cat);
 		} else if (CheckIfWon (PlayerType.Dog) == true) {
-			ShowWinner(PlayerType.Dog);
-		} else if (turnCount == dimensionX * dimensionY)
-			TicTacToeMainGUI.instance.LaunchDrawScreen();
+			ShowWinner (PlayerType.Dog);
+		} else if (turnCount == dimensionX * dimensionY) {
+			EmptyPotentialWinnerCells();
+			TicTacToeMainGUI.instance.LaunchDrawScreen ();
+		}
 		else
 			EmptyPotentialWinnerCells();
 	}
@@ -162,6 +164,7 @@ public class TicTacToeManager : MonoBehaviour {
 
 	void SetPlayerTurn( PlayerType playerTurn){
 		currentPlayerTurn = playerTurn;
+		Player1Mode.instance.DisplayNotificationIfNeeded ();
 		CurrentPlayerTurnImg.GetInstance ().SetPlayerTurnImg (currentPlayerTurn);
 	}
 }

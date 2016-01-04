@@ -64,7 +64,7 @@ public class TicTacToeCell : MonoBehaviour {
 		CurrentPlayerTurnImg.GetInstance ().gameObject.SetActive(false);
 
 		StartCoroutine (TicTacToeManager.GetInstance().mainCamera.GetComponent<ShakeTransform> ().LaunchSelf ());
-
+		TicTacToeMainGUI.instance.playerNotification.SetActive (false);
 		TicTacToeManager.GetInstance ().CheckWinningCondition ();
 
 
@@ -100,7 +100,7 @@ public class TicTacToeCell : MonoBehaviour {
 			SoundManager.instance.PlayIndependant(SoundManager.instance.dog_sound);
 		}
 	}
-	void ActivateCurrent(){
+	public void ActivateCurrent(){
 		TicTacToeManager.GetInstance ().LockBoard ();
 		StartCoroutine (LaunchActivateCurrent());
 	}
@@ -144,6 +144,8 @@ public class TicTacToeCell : MonoBehaviour {
 			OnTouchExit();
 			ActivateCurrent ();
 		}
+		if (Input.touches.Length == 0)
+			OnTouchExit ();
 	}
 
 	void OnMouseOver(){
